@@ -11,6 +11,9 @@
 
 if (!defined('DC_CONTEXT_ADMIN')) { return; }
 
+// dead but useful code, in order to have translations
+__('External Media').__('Insert external media from Internet');
+
 $core->addBehavior('adminPostHeaders',array('externalMediaBehaviors','jsLoad'));
 $core->addBehavior('adminPageHeaders',array('externalMediaBehaviors','jsLoad'));
 $core->addBehavior('adminRelatedHeaders',array('externalMediaBehaviors','jsLoad'));
