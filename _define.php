@@ -15,10 +15,10 @@ $this->registerModule(
 	/* Name */			"External Media",
 	/* Description*/		"Insert external media from Internet",
 	/* Author */			"Olivier Meunier",
-	/* Version */			'0.8',
+	/* Version */			'0.9',
 	array(
 		/* Permissions */	'permissions' =>	'usage,contentadmin',
 		/* Type */			'type' =>			'plugin',
-		/* Priority */		'priority' => 		50
+		/* Priority */		'priority' => 		1001
 	)
 );

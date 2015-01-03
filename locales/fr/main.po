@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-24 13:29+0200\n"
+"POT-Creation-Date: 2015-01-03 11:54+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: xave <xave@dotclear.net>\n"
 "Language-Team: \n"
@@ -22,7 +22,19 @@ msgid "Insert external media from Internet"
 msgstr "Permet l'insertion de média externe depuis Internet"
 
 msgid "External media"
-msgstr "Média externe"
+msgstr "Sélecteur de médias externes"
+
+msgid "Page URL:"
+msgstr "URL de la page :"
+
+msgid "URL cannot be empty."
+msgstr "L'URL ne peut être vide."
+
+msgid "Alignment"
+msgstr "Alignement"
+
+msgid "Media alignment:"
+msgstr "Alignement du média :"
 
 msgid "External media selector"
 msgstr "Sélecteur de médias externes"
@@ -32,9 +44,6 @@ msgstr "Services de média supportés"
 
 msgid "Please enter the URL of the page containing the video you want to include in your post."
 msgstr "Entrez l'URL de la page contenant la video que vous voulez intégrer à votre billet."
-
-msgid "Page URL:"
-msgstr "URL de la page :"
 
 msgid "Media alignment"
 msgstr "Alignement du média"
