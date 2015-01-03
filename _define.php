@@ -12,9 +12,9 @@
 if (!defined('DC_RC_PATH')) { return; }
 
 $this->registerModule(
-	/* Name */			"External Media",
+	/* Name */				"External Media",
 	/* Description*/		"Insert external media from Internet",
-	/* Author */			"Olivier Meunier",
+	/* Author */			"Olivier Meunier, Franck Paul and contributors",
 	/* Version */			'0.9',
 	array(
 		/* Permissions */	'permissions' =>	'usage,contentadmin',
