@@ -40,7 +40,7 @@ class externalMediaBehaviors
 		$settings->extmedia->put('api_key',empty($_POST['extmedia_api_key'])? '' : $_POST['extmedia_api_key'],'string');
 	}
 
-	public static function adminPostEditor($editor='',$context='',array $tags=array())
+	public static function adminPostEditor($editor='',$context='',array $tags=array(),$syntax='')
 	{
 		global $core;
 
