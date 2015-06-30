@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 externalMedia module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-03 11:56+0100\n"
+"POT-Creation-Date: 2015-06-30 17:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../hg-plugins/externalMedia//_admin.php:15
+#: ../hg-plugins/externalMedia//_admin.php:28
 msgid "External Media"
 msgstr ""
 
@@ -24,45 +25,53 @@ msgstr ""
 msgid "Insert external media from Internet"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:32
-#: ../hg-plugins/externalMedia//_admin.php:40
+#: ../hg-plugins/externalMedia//_admin.php:30
+msgid "embed.ly API Key:"
+msgstr ""
+
+#: ../hg-plugins/externalMedia//_admin.php:33
+msgid "See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order to get your free API Key."
+msgstr ""
+
+#: ../hg-plugins/externalMedia//_admin.php:52
+#: ../hg-plugins/externalMedia//_admin.php:60
 msgid "External media"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:42
-#: ../hg-plugins/externalMedia//index.php:35
+#: ../hg-plugins/externalMedia//_admin.php:62
+#: ../hg-plugins/externalMedia//index.php:41
 msgid "Page URL:"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:43
+#: ../hg-plugins/externalMedia//_admin.php:63
 msgid "URL cannot be empty."
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:44
+#: ../hg-plugins/externalMedia//_admin.php:64
 msgid "Alignment"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:45
+#: ../hg-plugins/externalMedia//_admin.php:65
 msgid "Media alignment:"
 msgstr ""
 
 #: ../hg-plugins/externalMedia//index.php:20
-#: ../hg-plugins/externalMedia//index.php:27
+#: ../hg-plugins/externalMedia//index.php:33
 msgid "External media selector"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:33
+#: ../hg-plugins/externalMedia//index.php:39
 msgid "Supported media services"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:34
+#: ../hg-plugins/externalMedia//index.php:40
 msgid "Please enter the URL of the page containing the video you want to include in your post."
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:55
+#: ../hg-plugins/externalMedia//index.php:61
 msgid "Media alignment"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:64
+#: ../hg-plugins/externalMedia//index.php:70
 msgid "Media title"
 msgstr ""

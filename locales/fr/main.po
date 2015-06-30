@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-03 11:54+0100\n"
+"POT-Creation-Date: 2015-06-30 17:50+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: xave <xave@dotclear.net>\n"
 "Language-Team: \n"
@@ -20,6 +20,12 @@ msgstr "Média externe"
 
 msgid "Insert external media from Internet"
 msgstr "Permet l'insertion de média externe depuis Internet"
+
+msgid "embed.ly API Key:"
+msgstr "Clé API embed.ly :"
+
+msgid "See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order to get your free API Key."
+msgstr "Voir le site <a href=\"https://app.embed.ly/signup\">embed.ly</a> pour obtenir une clé API gratuite."
 
 msgid "External media"
 msgstr "Sélecteur de médias externes"
