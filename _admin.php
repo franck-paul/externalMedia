@@ -48,7 +48,7 @@ class externalMediaBehaviors
 		if ($editor == 'dcLegacyEditor') {
 
 			$res =
-				'<script type="text/javascript" src="index.php?pf=externalMedia/post.js"></script>'.
+				dcPage::jsLoad(urldecode(dcPage::getPF('externalMedia/post.js')),$core->getVersion('externalMedia')).
 				'<script type="text/javascript">'."\n".
 				"//<![CDATA[\n".
 				dcPage::jsVar('jsToolBar.prototype.elements.extmedia.title',__('External media')).
