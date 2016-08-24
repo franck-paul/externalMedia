@@ -14,13 +14,22 @@ if (!defined('DC_CONTEXT_ADMIN')) { return; }
 // dead but useful code, in order to have translations
 __('External Media').__('Insert external media from Internet');
 
+$core->addBehavior('adminPageHTTPHeaderCSP',array('externalMediaBehaviors','adminPageHTTPHeaderCSP'));
 $core->addBehavior('adminBlogPreferencesForm',array('externalMediaBehaviors','adminBlogPreferencesForm'));
 $core->addBehavior('adminBeforeBlogSettingsUpdate',array('externalMediaBehaviors','adminBeforeBlogSettingsUpdate'));
 $core->addBehavior('adminPostEditor',array('externalMediaBehaviors','adminPostEditor'));
-$core->addBehavior('ckeditorExtraPlugins', array('externalMediaBehaviors', 'ckeditorExtraPlugins'));
+$core->addBehavior('ckeditorExtraPlugins', array('externalMediaBehaviors','ckeditorExtraPlugins'));
 
 class externalMediaBehaviors
 {
+	public static function adminPageHTTPHeaderCSP($csp)
+	{
+		if (!isset($csp['script-src'])) {
+			$csp['script-src'] = '';
+		}
+		$csp['script-src'] .= ' '.'http://oohembed.com'.' '.'http://api.embed.ly';
+	}
+
 	public static function adminBlogPreferencesForm($core,$settings)
 	{
 		$settings->addNameSpace('extmedia');
