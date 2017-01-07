@@ -22,9 +22,9 @@ $m_url = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
 <?php
 		// Set personal API key
 		$core->blog->settings->addNamespace('extmedia');
-		echo '<script type="text/javascript">'."\n"."//<![CDATA[\n".
+		echo '<script type="text/javascript">'."\n".
 			dcPage::jsVar('dotclear.extmedia_api_key',$core->blog->settings->extmedia->api_key).
-			"\n//]]>\n"."</script>\n";
+			"</script>\n";
 ?>
 </head>
 

@@ -5,7 +5,7 @@ $(function() {
 
 	$('#media-insert-ok').click(function() {
 		var url=$('#media-insert-form').get(0).m_url.value;
-		$.getJSON('http://oohembed.com/oohembed/?url='+url+'&key='+dotclear.extmedia_api_key+'&callback=?',
+		$.getJSON('https://api.embedly.com/1/oembed?url='+url+'&key='+dotclear.extmedia_api_key+'&callback=?',
 		function (data) {
 			sendClose(data.html);
 		});

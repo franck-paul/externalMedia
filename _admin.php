@@ -27,7 +27,7 @@ class externalMediaBehaviors
 		if (!isset($csp['script-src'])) {
 			$csp['script-src'] = '';
 		}
-		$csp['script-src'] .= ' '.'http://oohembed.com'.' '.'http://api.embed.ly';
+		$csp['script-src'] .= ' '.'https://api.embedly.com';
 	}
 
 	public static function adminBlogPreferencesForm($core,$settings)
@@ -59,16 +59,14 @@ class externalMediaBehaviors
 			$res =
 				dcPage::jsLoad(urldecode(dcPage::getPF('externalMedia/post.js')),$core->getVersion('externalMedia')).
 				'<script type="text/javascript">'."\n".
-				"//<![CDATA[\n".
 				dcPage::jsVar('jsToolBar.prototype.elements.extmedia.title',__('External media')).
-				"\n//]]>\n".
 				"</script>\n";
 
 		} elseif ($editor == 'dcCKEditor') {
 
 			$core->blog->settings->addNamespace('extmedia');
 			$res =
-				'<script type="text/javascript">'."\n"."//<![CDATA[\n".
+				'<script type="text/javascript">'."\n".
 				dcPage::jsVar('extmedia_title',__('External media')).
 				dcPage::jsVar('extmedia_tab_url',__('URL')).
 				dcPage::jsVar('extmedia_url',__('Page URL:')).
@@ -80,7 +78,7 @@ class externalMediaBehaviors
 				dcPage::jsVar('extmedia_align_right',__('Right')).
 				dcPage::jsVar('extmedia_align_center',__('Center')).
 				dcPage::jsVar('extmedia_api_key',$core->blog->settings->extmedia->api_key).
-				"\n//]]>\n"."</script>\n";
+				"\n"."</script>\n";
 
 		}
 		return $res;
