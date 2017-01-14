@@ -27,7 +27,7 @@ class externalMediaBehaviors
 		if (!isset($csp['script-src'])) {
 			$csp['script-src'] = '';
 		}
-		$csp['script-src'] .= ' '.'https://api.embedly.com';
+		$csp['script-src'] .= ' '.'https://api.embed.ly';
 	}
 
 	public static function adminBlogPreferencesForm($core,$settings)

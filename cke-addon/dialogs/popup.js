@@ -35,7 +35,7 @@ CKEDITOR.dialog.add('externalMediaDialog', function(editor) {
 			var url = dialog.getValueOf('tab-url', 'url');
 			var alignment = dialog.getValueOf('tab-alignment', 'alignment');
 
-			$.getJSON('http://oohembed.com/oohembed/?url='+url+'&key='+extmedia_api_key+'&callback=?',
+			$.getJSON('https://api.embed.ly/1/oembed?url='+url+'&key='+extmedia_api_key+'&callback=?',
 				  function(data) {
 					  var div = editor.document.createElement('div');
 					  var style = '';
