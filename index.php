@@ -50,18 +50,18 @@ if (!$m_url) {
         '<div style="margin: 1em auto; text-align: center;">' . $m_object . '</div>' .
         '<form id="media-insert-form" action="" method="get">';
 
-    $i_align = array(
-        'none'   => array(__('None'), 0),
-        'left'   => array(__('Left'), 0),
-        'right'  => array(__('Right'), 0),
-        'center' => array(__('Center'), 1)
-    );
+    $i_align = [
+        'none'   => [__('None'), 0],
+        'left'   => [__('Left'), 0],
+        'right'  => [__('Right'), 0],
+        'center' => [__('Center'), 1]
+    ];
 
     echo '<h3>' . __('Media alignment') . '</h3>';
     echo '<p>';
     foreach ($i_align as $k => $v) {
         echo '<label class="classic" for"alignement">' .
-        form::radio(array('alignment'), $k, $v[1]) . ' ' . $v[0] . '</label><br /> ';
+        form::radio(['alignment'], $k, $v[1]) . ' ' . $v[0] . '</label><br /> ';
     }
     echo '</p>';
 

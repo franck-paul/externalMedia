@@ -17,11 +17,11 @@ $this->registerModule(
     "External Media",                                // Name
     "Insert external media from Internet",           // Description
     "Olivier Meunier, Franck Paul and contributors", // Author
-    '1.2.2',                                         // Version
-    array(
-        'requires'    => array(array('core', '2.10')), // Dependencies
-        'permissions' => 'usage,contentadmin',         // Permissions
-        'type'        => 'plugin',                     // Type
-        'priority'    => 1001                         // Priority
-    )
+    '1.3',                                           // Version
+    [
+        'requires'    => [['core', '2.13']],   // Dependencies
+        'permissions' => 'usage,contentadmin', // Permissions
+        'type'        => 'plugin',             // Type
+        'priority'    => 1001                 // Priority
+    ]
 );

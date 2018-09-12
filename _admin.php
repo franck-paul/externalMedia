@@ -16,11 +16,11 @@ if (!defined('DC_CONTEXT_ADMIN')) {return;}
 // dead but useful code, in order to have translations
 __('External Media') . __('Insert external media from Internet');
 
-$core->addBehavior('adminPageHTTPHeaderCSP', array('externalMediaBehaviors', 'adminPageHTTPHeaderCSP'));
-$core->addBehavior('adminBlogPreferencesForm', array('externalMediaBehaviors', 'adminBlogPreferencesForm'));
-$core->addBehavior('adminBeforeBlogSettingsUpdate', array('externalMediaBehaviors', 'adminBeforeBlogSettingsUpdate'));
-$core->addBehavior('adminPostEditor', array('externalMediaBehaviors', 'adminPostEditor'));
-$core->addBehavior('ckeditorExtraPlugins', array('externalMediaBehaviors', 'ckeditorExtraPlugins'));
+$core->addBehavior('adminPageHTTPHeaderCSP', ['externalMediaBehaviors', 'adminPageHTTPHeaderCSP']);
+$core->addBehavior('adminBlogPreferencesForm', ['externalMediaBehaviors', 'adminBlogPreferencesForm']);
+$core->addBehavior('adminBeforeBlogSettingsUpdate', ['externalMediaBehaviors', 'adminBeforeBlogSettingsUpdate']);
+$core->addBehavior('adminPostEditor', ['externalMediaBehaviors', 'adminPostEditor']);
+$core->addBehavior('ckeditorExtraPlugins', ['externalMediaBehaviors', 'ckeditorExtraPlugins']);
 
 class externalMediaBehaviors
 {
@@ -51,7 +51,7 @@ class externalMediaBehaviors
         $settings->extmedia->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], 'string');
     }
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = array(), $syntax = '')
+    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
         global $core;
 
@@ -88,10 +88,10 @@ class externalMediaBehaviors
 
     public static function ckeditorExtraPlugins(ArrayObject $extraPlugins, $context = '')
     {
-        $extraPlugins[] = array(
+        $extraPlugins[] = [
             'name'   => 'externalmedia',
             'button' => 'ExternalMedia',
             'url'    => DC_ADMIN_URL . 'index.php?pf=externalMedia/cke-addon/'
-        );
+        ];
     }
 }
