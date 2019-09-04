@@ -1,3 +1,6 @@
+/*global CKEDITOR, extmedia_title */
+'use strict';
+
 CKEDITOR.plugins.add('externalmedia', {
 	requires:"dialog",
 

@@ -18,13 +18,13 @@ jsToolBar.prototype.elements.extmedia = {
       'menubar=no,resizable=yes,scrollbars=yes,status=no');
   },
   gethtml: function() {
-    var d = this.data;
+    const d = this.data;
 
     if (d.m_object == '') {
       return false;
     }
 
-    var res = '<div class="external-media"';
+    let res = '<div class="external-media"';
 
     if (d.alignment == 'left') {
       res += ' style="float: left; margin: 0 1em 1em 0;"';
@@ -38,7 +38,7 @@ jsToolBar.prototype.elements.extmedia = {
 
     if (d.title) {
       if (d.url) {
-        d.title = '<a href="' + d.url + '">' + d.title + '</a>';
+        d.title = `<a href="${d.url}">${d.title$}</a>`;
       }
       res += '\n<br />' + d.title;
     }
@@ -59,21 +59,25 @@ jsToolBar.prototype.elements.extmedia.fn.markdown = function() {
 };
 
 jsToolBar.prototype.elements.extmedia.fncall.wiki = function() {
-  var html = this.elements.extmedia.gethtml();
+  const html = this.elements.extmedia.gethtml();
 
   this.encloseSelection('', '', function() {
-    return '\n///html\n' + html + '\n///\n';
+    return `
+///html
+${html}
+///
+`;
   });
 };
 jsToolBar.prototype.elements.extmedia.fncall.xhtml = function() {
-  var html = this.elements.extmedia.gethtml();
+  const html = this.elements.extmedia.gethtml();
 
   this.encloseSelection('', '', function() {
     return html;
   });
 };
 jsToolBar.prototype.elements.extmedia.fncall.markdown = function() {
-  var html = this.elements.extmedia.gethtml();
+  const html = this.elements.extmedia.gethtml();
 
   this.encloseSelection('', '', function() {
     return html;
