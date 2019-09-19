@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 17:50+0200\n"
+"POT-Creation-Date: 2019-09-19 14:01+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: xave <xave@dotclear.net>\n"
 "Language-Team: \n"
@@ -45,6 +45,12 @@ msgstr "Alignement du média :"
 msgid "External media selector"
 msgstr "Sélecteur de médias externes"
 
+msgid "embed.ly API Key missing, see blog settings"
+msgstr "Clé API embed.ly manquante, voir les réglages du blog"
+
+msgid "embed.ly API error: "
+msgstr "Erreur de l'API embed.ly : "
+
 msgid "Supported media services"
 msgstr "Services de média supportés"
 
@@ -56,9 +62,3 @@ msgstr "Alignement du média"
 
 msgid "Media title"
 msgstr "Titre du média"
-
-msgid "embed.ly API Key missing, see blog settings"
-msgstr "Clé API embed.ly manquante, voir les réglages du blog"
-
-msgid "embed.ly API error: "
-msgstr "Erreur de l'API embed.ly : "

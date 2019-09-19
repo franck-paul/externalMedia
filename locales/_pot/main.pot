@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 externalMedia module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-30 17:50+0200\n"
+"POT-Creation-Date: 2019-09-19 14:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,62 +16,70 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../hg-plugins/externalMedia//_admin.php:15
-#: ../hg-plugins/externalMedia//_admin.php:28
+#: ../git-plugins/externalMedia//_admin.php:17
+#: ../git-plugins/externalMedia//_admin.php:39
 msgid "External Media"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:15
+#: ../git-plugins/externalMedia//_admin.php:17
 msgid "Insert external media from Internet"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:30
+#: ../git-plugins/externalMedia//_admin.php:41
 msgid "embed.ly API Key:"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:33
+#: ../git-plugins/externalMedia//_admin.php:44
 msgid "See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order to get your free API Key."
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:52
-#: ../hg-plugins/externalMedia//_admin.php:60
+#: ../git-plugins/externalMedia//_admin.php:64
+#: ../git-plugins/externalMedia//_admin.php:72
 msgid "External media"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:62
-#: ../hg-plugins/externalMedia//index.php:41
+#: ../git-plugins/externalMedia//_admin.php:74
+#: ../git-plugins/externalMedia//index.php:44
 msgid "Page URL:"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:63
+#: ../git-plugins/externalMedia//_admin.php:75
 msgid "URL cannot be empty."
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:64
+#: ../git-plugins/externalMedia//_admin.php:76
 msgid "Alignment"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//_admin.php:65
+#: ../git-plugins/externalMedia//_admin.php:77
 msgid "Media alignment:"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:20
-#: ../hg-plugins/externalMedia//index.php:33
+#: ../git-plugins/externalMedia//index.php:22
+#: ../git-plugins/externalMedia//index.php:37
 msgid "External media selector"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:39
+#: ../git-plugins/externalMedia//index.php:29
+msgid "embed.ly API Key missing, see blog settings"
+msgstr ""
+
+#: ../git-plugins/externalMedia//index.php:30
+msgid "embed.ly API error: "
+msgstr ""
+
+#: ../git-plugins/externalMedia//index.php:42
 msgid "Supported media services"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:40
+#: ../git-plugins/externalMedia//index.php:43
 msgid "Please enter the URL of the page containing the video you want to include in your post."
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:61
+#: ../git-plugins/externalMedia//index.php:62
 msgid "Media alignment"
 msgstr ""
 
-#: ../hg-plugins/externalMedia//index.php:70
+#: ../git-plugins/externalMedia//index.php:71
 msgid "Media title"
 msgstr ""
