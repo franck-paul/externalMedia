@@ -56,3 +56,9 @@ msgstr "Alignement du média"
 
 msgid "Media title"
 msgstr "Titre du média"
+
+msgid "embed.ly API Key missing, see blog settings"
+msgstr "Clé API embed.ly manquante, voir les réglages du blog"
+
+msgid "embed.ly API error: "
+msgstr "Erreur de l'API embed.ly : "
