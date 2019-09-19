@@ -8,11 +8,11 @@ $(function() {
 
   $('#media-insert-ok').click(function() {
     const url = $('#media-insert-form').get(0).m_url.value;
-    $.getJSON(`https://api.embed.lyx/1/oembed?url=${url}&key=${dotclear.extmedia_api_key}&callback=?`,
+    $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.extmedia_api_key}&callback=?`,
       function(data) {
         sendClose(data.html);
-      }).fail(function () {
-        window.alert("https://api.embed.ly/ request error!");
+      }).fail(function (xhr) {
+        window.alert("https://api.embed.ly/ request: " + xhr.status + " " + xhr.statusText);
       });
   });
 });
