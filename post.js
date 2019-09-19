@@ -1,9 +1,9 @@
-/*global jsToolBar */
+/*global jsToolBar, getData */
 'use strict';
 
 jsToolBar.prototype.elements.extmedia = {
   type: 'button',
-  title: 'External Media',
+  title: getData('dc_editor_extmedia').title || 'External Media',
   icon: 'index.php?pf=externalMedia/bt_video.png',
   fn: {},
   fncall: {},

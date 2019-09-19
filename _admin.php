@@ -59,28 +59,26 @@ class externalMediaBehaviors
         if ($editor == 'dcLegacyEditor') {
 
             $res =
-            dcPage::jsLoad(urldecode(dcPage::getPF('externalMedia/post.js')), $core->getVersion('externalMedia')) .
-            '<script type="text/javascript">' . "\n" .
-            dcPage::jsVar('jsToolBar.prototype.elements.extmedia.title', __('External media')) .
-                "</script>\n";
+            dcPage::jsJson('dc_editor_extmedia', ['title' => __('External media')]) .
+            dcPage::jsLoad(urldecode(dcPage::getPF('externalMedia/post.js')), $core->getVersion('externalMedia'));
 
         } elseif ($editor == 'dcCKEditor') {
 
             $core->blog->settings->addNamespace('extmedia');
             $res =
-            '<script type="text/javascript">' . "\n" .
-            dcPage::jsVar('extmedia_title', __('External media')) .
-            dcPage::jsVar('extmedia_tab_url', __('URL')) .
-            dcPage::jsVar('extmedia_url', __('Page URL:')) .
-            dcPage::jsVar('extmedia_url_empty', __('URL cannot be empty.')) .
-            dcPage::jsVar('extmedia_tab_align', __('Alignment')) .
-            dcPage::jsVar('extmedia_align', __('Media alignment:')) .
-            dcPage::jsVar('extmedia_align_none', __('None')) .
-            dcPage::jsVar('extmedia_align_left', __('Left')) .
-            dcPage::jsVar('extmedia_align_right', __('Right')) .
-            dcPage::jsVar('extmedia_align_center', __('Center')) .
-            dcPage::jsVar('extmedia_api_key', $core->blog->settings->extmedia->api_key) .
-                "\n" . "</script>\n";
+            dcPage::jsJson('ck_editor_extmedia', [
+                'title'        => __('External media'),
+                'tab_url'      => __('URL'),
+                'url'          => __('Page URL:'),
+                'url_empty'    => __('URL cannot be empty.'),
+                'tab_align'    => __('Alignment'),
+                'align'        => __('Media alignment:'),
+                'align_none'   => __('None'),
+                'align_left'   => __('Left'),
+                'align_right'  => __('Right'),
+                'align_center' => __('Center'),
+                'api_key'      => $core->blog->settings->extmedia->api_key
+            ]);
 
         }
         return $res;

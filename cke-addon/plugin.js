@@ -1,18 +1,23 @@
-/*global CKEDITOR, extmedia_title */
+/*global dotclear, getData, CKEDITOR */
 'use strict';
 
-CKEDITOR.plugins.add('externalmedia', {
-	requires:"dialog",
+dotclear.ck_extmedia = getData('ck_editor_extmedia');
 
-	init: function(editor) {
-		editor.addCommand('externalMediaCommand', new CKEDITOR.dialogCommand('externalMediaDialog'));
+(function() {
 
-		CKEDITOR.dialog.add('externalMediaDialog', this.path+'dialogs/popup.js');
+  CKEDITOR.plugins.add('externalmedia', {
+    requires: "dialog",
 
-		editor.ui.addButton("ExternalMedia", {
-			label: extmedia_title,
-			command: 'externalMediaCommand',
-			icon: this.path+'icons/icon.png'
-		});
-	}
-});
+    init: function(editor) {
+      editor.addCommand('externalMediaCommand', new CKEDITOR.dialogCommand('externalMediaDialog'));
+
+      CKEDITOR.dialog.add('externalMediaDialog', this.path + 'dialogs/popup.js');
+
+      editor.ui.addButton("ExternalMedia", {
+        label: dotclear.ck_extmedia.title,
+        command: 'externalMediaCommand',
+        icon: this.path + 'icons/icon.png'
+      });
+    }
+  });
+})();
