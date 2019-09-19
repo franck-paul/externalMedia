@@ -19,7 +19,7 @@ $this->registerModule(
     "Olivier Meunier, Franck Paul and contributors", // Author
     '1.3',                                           // Version
     [
-        'requires'    => [['core', '2.13']],   // Dependencies
+        'requires'    => [['core', '2.15']],   // Dependencies
         'permissions' => 'usage,contentadmin', // Permissions
         'type'        => 'plugin',             // Type
         'priority'    => 1001                 // Priority
