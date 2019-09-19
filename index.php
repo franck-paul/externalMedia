@@ -24,9 +24,11 @@ $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
 <?php
 // Set personal API key
 $core->blog->settings->addNamespace('extmedia');
-echo '<script type="text/javascript">' . "\n" .
-dcPage::jsVar('dotclear.extmedia_api_key', $core->blog->settings->extmedia->api_key) .
-    "</script>\n";
+echo dcPage::jsJson('external_media', ['external_media' => [
+    'api_key'       => $core->blog->settings->extmedia->api_key,
+    'missing_key'   => __('embed.ly API Key missing, see blog settings'),
+    'request_error' => __('embed.ly API error: ')
+]]);
 ?>
 </head>
 

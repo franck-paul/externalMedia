@@ -1,19 +1,25 @@
-/*global $, dotclear */
+/*global $, dotclear, getData */
 'use strict';
 
 $(function() {
+  Object.assign(dotclear, getData('external_media'));
+
   $('#media-insert-cancel').click(function() {
     window.close();
   });
 
   $('#media-insert-ok').click(function() {
     const url = $('#media-insert-form').get(0).m_url.value;
-    $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.extmedia_api_key}&callback=?`,
-      function(data) {
-        sendClose(data.html);
-      }).fail(function (xhr) {
-        window.alert("https://api.embed.ly/ request: " + xhr.status + " " + xhr.statusText);
-      });
+    if (dotclear.external_media.api_key == undefined || dotclear.external_media.api_key == '') {
+      window.alert(dotclear.external_media.missing_key);
+    } else {
+      $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.external_media.api_key}&callback=?`,
+        function(data) {
+          sendClose(data.html);
+        }).fail(function (xhr) {
+          window.alert(dotclear.external_media.request_error + xhr.status + " " + xhr.statusText);
+        });
+    }
   });
 });
 
