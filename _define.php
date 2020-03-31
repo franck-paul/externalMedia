@@ -17,11 +17,16 @@ $this->registerModule(
     "External Media",                                // Name
     "Insert external media from Internet",           // Description
     "Olivier Meunier, Franck Paul and contributors", // Author
-    '1.3',                                           // Version
+    '1.4',                                           // Version
     [
-        'requires'    => [['core', '2.16']],   // Dependencies
-        'permissions' => 'usage,contentadmin', // Permissions
-        'type'        => 'plugin',             // Type
-        'priority'    => 1001                 // Priority
+        'requires'    => [['core', '2.17']],                             // Dependencies
+        'permissions' => 'usage,contentadmin',                           // Permissions
+        'type'        => 'plugin',                                       // Type
+        'priority'    => 1001,                                           // Priority
+        'support'     => 'https://github.com/franck-paul/externalMedia', // Support URL
+        'settings'    => [
+            'self' => false,
+            'blog' => '#params.external_media'
+        ]
     ]
 );

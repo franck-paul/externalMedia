@@ -36,7 +36,7 @@ class externalMediaBehaviors
     {
         $settings->addNameSpace('extmedia');
         echo
-        '<div class="fieldset"><h4>' . __('External Media') . '</h4>' . "\n" .
+        '<div class="fieldset"><h4 id="external_media">' . __('External Media') . '</h4>' . "\n" .
         '<p><label>' .
         __('embed.ly API Key:') . " " .
         form::field('extmedia_api_key', 25, 50, $settings->extmedia->api_key, 3) .
