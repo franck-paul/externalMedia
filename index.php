@@ -20,7 +20,7 @@ $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
 <html>
 <head>
   <title><?php echo __('External media selector') ?></title>
-  <script type="text/javascript" src="<?php echo urldecode(dcPage::getPF('externalMedia/popup.js')); ?>"></script>
+  <script src="<?php echo urldecode(dcPage::getPF('externalMedia/popup.js')); ?>"></script>
 <?php
 // Set personal API key
 $core->blog->settings->addNamespace('extmedia');
