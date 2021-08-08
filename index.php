@@ -10,8 +10,9 @@
  * @copyright Olivier Meunier
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_CONTEXT_ADMIN')) {return;}
+if (!defined('DC_CONTEXT_ADMIN')) {
+    return;
+}
 
 $m_object = $m_title = $m_url = null;
 $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;

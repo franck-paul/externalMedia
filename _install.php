@@ -10,8 +10,9 @@
  * @copyright Olivier Meunier
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
-
-if (!defined('DC_CONTEXT_ADMIN')) {return;}
+if (!defined('DC_CONTEXT_ADMIN')) {
+    return;
+}
 
 $new_version = $core->plugins->moduleInfo('externalMedia', 'version');
 $old_version = $core->getVersion('externalMedia');
@@ -20,12 +21,12 @@ if (version_compare($old_version, $new_version, '>=')) {
     return;
 }
 
-try
-{
+try {
     $core->setVersion('externalMedia', $new_version);
 
     return true;
 } catch (Exception $e) {
     $core->error->add($e->getMessage());
 }
+
 return false;

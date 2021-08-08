@@ -1,30 +1,28 @@
-/*global $, dotclear, getData */
+/*global $, dotclear */
 'use strict';
 
-$(function() {
-  Object.assign(dotclear, getData('external_media'));
+$(function () {
+  Object.assign(dotclear, dotclear.getData('external_media'));
 
-  $('#media-insert-cancel').on('click', function() {
+  $('#media-insert-cancel').on('click', function () {
     window.close();
   });
 
-  $('#media-insert-ok').on('click', function() {
+  $('#media-insert-ok').on('click', function () {
     const url = $('#media-insert-form').get(0).m_url.value;
     if (dotclear.external_media.api_key == undefined || dotclear.external_media.api_key == '') {
       window.alert(dotclear.external_media.missing_key);
     } else {
-      $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.external_media.api_key}&callback=?`,
-        function(data) {
-          sendClose(data.html);
-        }).fail(function (xhr) {
-          window.alert(dotclear.external_media.request_error + xhr.status + " " + xhr.statusText);
-        });
+      $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.external_media.api_key}&callback=?`, function (data) {
+        sendClose(data.html);
+      }).fail(function (xhr) {
+        window.alert(dotclear.external_media.request_error + xhr.status + ' ' + xhr.statusText);
+      });
     }
   });
 });
 
 function sendClose(object) {
-
   const insert_form = $('#media-insert-form').get(0);
   if (insert_form == undefined) {
     return;

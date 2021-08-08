@@ -1,23 +1,25 @@
-/*global jsToolBar, getData */
+/*global jsToolBar, dotclear */
 'use strict';
 
 jsToolBar.prototype.elements.extmedia = {
   type: 'button',
-  title: getData('dc_editor_extmedia').title || 'External Media',
+  title: dotclear.getData('dc_editor_extmedia').title || 'External Media',
   icon: 'index.php?pf=externalMedia/bt_video.png',
   fn: {},
   fncall: {},
   open_url: 'plugin.php?p=externalMedia&popup=1',
   data: {},
-  popup: function() {
+  popup: function () {
     window.the_toolbar = this;
     this.elements.extmedia.data = {};
 
-    window.open(this.elements.extmedia.open_url, 'dc_popup',
-      'alwaysRaised=yes,dependent=yes,toolbar=yes,height=500,width=760,' +
-      'menubar=no,resizable=yes,scrollbars=yes,status=no');
+    window.open(
+      this.elements.extmedia.open_url,
+      'dc_popup',
+      'alwaysRaised=yes,dependent=yes,toolbar=yes,height=500,width=760,' + 'menubar=no,resizable=yes,scrollbars=yes,status=no'
+    );
   },
-  gethtml: function() {
+  gethtml: function () {
     const d = this.data;
 
     if (d.m_object == '') {
@@ -45,23 +47,23 @@ jsToolBar.prototype.elements.extmedia = {
 
     res += '\n</div>';
     return res;
-  }
+  },
 };
 
-jsToolBar.prototype.elements.extmedia.fn.wiki = function() {
+jsToolBar.prototype.elements.extmedia.fn.wiki = function () {
   this.elements.extmedia.popup.call(this);
 };
-jsToolBar.prototype.elements.extmedia.fn.xhtml = function() {
+jsToolBar.prototype.elements.extmedia.fn.xhtml = function () {
   this.elements.extmedia.popup.call(this);
 };
-jsToolBar.prototype.elements.extmedia.fn.markdown = function() {
+jsToolBar.prototype.elements.extmedia.fn.markdown = function () {
   this.elements.extmedia.popup.call(this);
 };
 
-jsToolBar.prototype.elements.extmedia.fncall.wiki = function() {
+jsToolBar.prototype.elements.extmedia.fncall.wiki = function () {
   const html = this.elements.extmedia.gethtml();
 
-  this.encloseSelection('', '', function() {
+  this.encloseSelection('', '', function () {
     return `
 ///html
 ${html}
@@ -69,17 +71,17 @@ ${html}
 `;
   });
 };
-jsToolBar.prototype.elements.extmedia.fncall.xhtml = function() {
+jsToolBar.prototype.elements.extmedia.fncall.xhtml = function () {
   const html = this.elements.extmedia.gethtml();
 
-  this.encloseSelection('', '', function() {
+  this.encloseSelection('', '', function () {
     return html;
   });
 };
-jsToolBar.prototype.elements.extmedia.fncall.markdown = function() {
+jsToolBar.prototype.elements.extmedia.fncall.markdown = function () {
   const html = this.elements.extmedia.gethtml();
 
-  this.encloseSelection('', '', function() {
+  this.encloseSelection('', '', function () {
     return html;
   });
 };
