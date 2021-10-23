@@ -24,10 +24,13 @@ $this->registerModule(
         'permissions' => 'usage,contentadmin',                           // Permissions
         'type'        => 'plugin',                                       // Type
         'priority'    => 1001,                                           // Priority
-        'support'     => 'https://github.com/franck-paul/externalMedia', // Support URL
         'settings'    => [
             'self' => false,
             'blog' => '#params.external_media'
-        ]
+        ],
+
+        'details'    => 'https://open-time.net/?q=externalMedia',       // Details URL
+        'support'    => 'https://github.com/franck-paul/externalMedia', // Support URL
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/main/dcstore.xml'
     ]
 );
