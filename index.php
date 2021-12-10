@@ -21,14 +21,14 @@ $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
 <html>
 <head>
   <title><?php echo __('External media selector') ?></title>
-  <script src="<?php echo urldecode(dcPage::getPF('externalMedia/popup.js')); ?>"></script>
+  <script src="<?php echo urldecode(dcPage::getPF('externalMedia/js/popup.js')); ?>"></script>
 <?php
 // Set personal API key
 $core->blog->settings->addNamespace('extmedia');
 echo dcPage::jsJson('external_media', ['external_media' => [
     'api_key'       => $core->blog->settings->extmedia->api_key,
     'missing_key'   => __('embed.ly API Key missing, see blog settings'),
-    'request_error' => __('embed.ly API error: ')
+    'request_error' => __('embed.ly API error: '),
 ]]);
 ?>
 </head>
@@ -57,7 +57,7 @@ if (!$m_url) {
         'none'   => [__('None'), 0],
         'left'   => [__('Left'), 0],
         'right'  => [__('Right'), 0],
-        'center' => [__('Center'), 1]
+        'center' => [__('Center'), 1],
     ];
 
     echo '<h3>' . __('Media alignment') . '</h3>';

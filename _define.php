@@ -18,7 +18,7 @@ $this->registerModule(
     'External Media',                                // Name
     'Insert external media from Internet',           // Description
     'Olivier Meunier, Franck Paul and contributors', // Author
-    '1.4',                                           // Version
+    '1.5',                                           // Version
     [
         'requires'    => [['core', '2.19']],                             // Dependencies
         'permissions' => 'usage,contentadmin',                           // Permissions
@@ -26,11 +26,11 @@ $this->registerModule(
         'priority'    => 1001,                                           // Priority
         'settings'    => [
             'self' => false,
-            'blog' => '#params.external_media'
+            'blog' => '#params.external_media',
         ],
 
         'details'    => 'https://open-time.net/?q=externalMedia',       // Details URL
         'support'    => 'https://github.com/franck-paul/externalMedia', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/master/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/master/dcstore.xml',
     ]
 );
