@@ -24,9 +24,9 @@ $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
   <script src="<?php echo urldecode(dcPage::getPF('externalMedia/js/popup.js')); ?>"></script>
 <?php
 // Set personal API key
-$core->blog->settings->addNamespace('extmedia');
+dcCore::app()->blog->settings->addNamespace('extmedia');
 echo dcPage::jsJson('external_media', ['external_media' => [
-    'api_key'       => $core->blog->settings->extmedia->api_key,
+    'api_key'       => dcCore::app()->blog->settings->extmedia->api_key,
     'missing_key'   => __('embed.ly API Key missing, see blog settings'),
     'request_error' => __('embed.ly API error: '),
 ]]);
@@ -46,7 +46,7 @@ if (!$m_url) {
     form::field('m_url', 50, 250, html::escapeHTML($m_url)) . '</p>' .
 
     '<p><input type="submit" value="' . __('ok') . '" />' .
-    $core->formNonce() . '</p>' .
+    dcCore::app()->formNonce() . '</p>' .
         '</form>';
 } else {
     echo

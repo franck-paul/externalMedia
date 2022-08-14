@@ -29,7 +29,7 @@ function sendClose(object) {
   }
 
   const tb = window.opener.the_toolbar;
-  const data = tb.elements.extmedia.data;
+  const { data } = tb.elements.extmedia;
 
   data.alignment = $('input[name="alignment"]:checked', insert_form).val();
   data.title = insert_form.m_title.value;

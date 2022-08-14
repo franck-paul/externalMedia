@@ -38,9 +38,8 @@ CKEDITOR.dialog.add('externalMediaDialog', (editor) => ({
     },
   ],
   onOk() {
-    const dialog = this;
-    const url = dialog.getValueOf('tab-url', 'url');
-    const alignment = dialog.getValueOf('tab-alignment', 'alignment');
+    const url = this.getValueOf('tab-url', 'url');
+    const alignment = this.getValueOf('tab-alignment', 'alignment');
 
     $.getJSON(
       `https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.ck_extmedia.api_key}&callback=?`,

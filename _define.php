@@ -18,9 +18,9 @@ $this->registerModule(
     'External Media',                                // Name
     'Insert external media from Internet',           // Description
     'Olivier Meunier, Franck Paul and contributors', // Author
-    '1.5',                                           // Version
+    '1.6',
     [
-        'requires'    => [['core', '2.19']],                             // Dependencies
+        'requires'    => [['core', '2.23']],                             // Dependencies
         'permissions' => 'usage,contentadmin',                           // Permissions
         'type'        => 'plugin',                                       // Type
         'priority'    => 1001,                                           // Priority

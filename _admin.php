@@ -17,11 +17,11 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 // dead but useful code, in order to have translations
 __('External Media') . __('Insert external media from Internet');
 
-$core->addBehavior('adminPageHTTPHeaderCSP', ['externalMediaBehaviors', 'adminPageHTTPHeaderCSP']);
-$core->addBehavior('adminBlogPreferencesForm', ['externalMediaBehaviors', 'adminBlogPreferencesForm']);
-$core->addBehavior('adminBeforeBlogSettingsUpdate', ['externalMediaBehaviors', 'adminBeforeBlogSettingsUpdate']);
-$core->addBehavior('adminPostEditor', ['externalMediaBehaviors', 'adminPostEditor']);
-$core->addBehavior('ckeditorExtraPlugins', ['externalMediaBehaviors', 'ckeditorExtraPlugins']);
+dcCore::app()->addBehavior('adminPageHTTPHeaderCSP', ['externalMediaBehaviors', 'adminPageHTTPHeaderCSP']);
+dcCore::app()->addBehavior('adminBlogPreferencesForm', ['externalMediaBehaviors', 'adminBlogPreferencesForm']);
+dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', ['externalMediaBehaviors', 'adminBeforeBlogSettingsUpdate']);
+dcCore::app()->addBehavior('adminPostEditor', ['externalMediaBehaviors', 'adminPostEditor']);
+dcCore::app()->addBehavior('ckeditorExtraPlugins', ['externalMediaBehaviors', 'ckeditorExtraPlugins']);
 
 class externalMediaBehaviors
 {
@@ -33,7 +33,7 @@ class externalMediaBehaviors
         $csp['script-src'] .= ' ' . 'https://api.embed.ly';
     }
 
-    public static function adminBlogPreferencesForm($core, $settings)
+    public static function adminBlogPreferencesForm($core = null, $settings)
     {
         $settings->addNameSpace('extmedia');
         echo
@@ -54,14 +54,12 @@ class externalMediaBehaviors
 
     public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
     {
-        global $core;
-
         $res = '';
         if ($editor == 'dcLegacyEditor') {
             $res = dcPage::jsJson('dc_editor_extmedia', ['title' => __('External media')]) .
-            dcPage::jsLoad(urldecode(dcPage::getPF('externalMedia/js/post.js')), $core->getVersion('externalMedia'));
+            dcPage::jsModuleLoad('externalMedia/js/post.js', dcCore::app()->getVersion('externalMedia'));
         } elseif ($editor == 'dcCKEditor') {
-            $core->blog->settings->addNamespace('extmedia');
+            dcCore::app()->blog->settings->addNamespace('extmedia');
             $res = dcPage::jsJson('ck_editor_extmedia', [
                 'title'        => __('External media'),
                 'tab_url'      => __('URL'),
@@ -73,7 +71,7 @@ class externalMediaBehaviors
                 'align_left'   => __('Left'),
                 'align_right'  => __('Right'),
                 'align_center' => __('Center'),
-                'api_key'      => $core->blog->settings->extmedia->api_key,
+                'api_key'      => dcCore::app()->blog->settings->extmedia->api_key,
             ]);
         }
 

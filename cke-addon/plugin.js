@@ -3,7 +3,7 @@
 
 dotclear.ck_extmedia = dotclear.getData('ck_editor_extmedia');
 
-(() => {
+{
   CKEDITOR.plugins.add('externalmedia', {
     requires: 'dialog',
 
@@ -19,4 +19,4 @@ dotclear.ck_extmedia = dotclear.getData('ck_editor_extmedia');
       });
     },
   });
-})();
+}
