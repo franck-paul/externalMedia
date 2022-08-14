@@ -33,7 +33,7 @@ class externalMediaBehaviors
         $csp['script-src'] .= ' ' . 'https://api.embed.ly';
     }
 
-    public static function adminBlogPreferencesForm($core = null, $settings)
+    public static function adminBlogPreferencesForm($core, $settings)
     {
         $settings->addNameSpace('extmedia');
         echo
