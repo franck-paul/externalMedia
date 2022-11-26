@@ -15,22 +15,25 @@ if (!defined('DC_RC_PATH')) {
 }
 
 $this->registerModule(
-    'External Media',                                // Name
-    'Insert external media from Internet',           // Description
-    'Olivier Meunier, Franck Paul and contributors', // Author
-    '1.6.1',
+    'External Media',
+    'Insert external media from Internet',
+    'Olivier Meunier, Franck Paul and contributors',
+    '1.7',
     [
-        'requires'    => [['core', '2.23']],                             // Dependencies
-        'permissions' => 'usage,contentadmin',                           // Permissions
-        'type'        => 'plugin',                                       // Type
-        'priority'    => 1001,                                           // Priority
-        'settings'    => [
+        'requires'    => [['core', '2.24']],
+        'permissions' => dcCore::app()->auth->makePermissions([
+            dcAuth::PERMISSION_USAGE,
+            dcAuth::PERMISSION_CONTENT_ADMIN,
+        ]),
+        'type'     => 'plugin',
+        'priority' => 1001,
+        'settings' => [
             'self' => false,
             'blog' => '#params.external_media',
         ],
 
-        'details'    => 'https://open-time.net/?q=externalMedia',       // Details URL
-        'support'    => 'https://github.com/franck-paul/externalMedia', // Support URL
+        'details'    => 'https://open-time.net/?q=externalMedia',
+        'support'    => 'https://github.com/franck-paul/externalMedia',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/master/dcstore.xml',
     ]
 );

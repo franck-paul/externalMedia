@@ -17,12 +17,6 @@ if (!defined('DC_CONTEXT_ADMIN')) {
 // dead but useful code, in order to have translations
 __('External Media') . __('Insert external media from Internet');
 
-dcCore::app()->addBehavior('adminPageHTTPHeaderCSP', ['externalMediaBehaviors', 'adminPageHTTPHeaderCSP']);
-dcCore::app()->addBehavior('adminBlogPreferencesForm', ['externalMediaBehaviors', 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', ['externalMediaBehaviors', 'adminBeforeBlogSettingsUpdate']);
-dcCore::app()->addBehavior('adminPostEditor', ['externalMediaBehaviors', 'adminPostEditor']);
-dcCore::app()->addBehavior('ckeditorExtraPlugins', ['externalMediaBehaviors', 'ckeditorExtraPlugins']);
-
 class externalMediaBehaviors
 {
     public static function adminPageHTTPHeaderCSP($csp)
@@ -33,7 +27,7 @@ class externalMediaBehaviors
         $csp['script-src'] .= ' ' . 'https://api.embed.ly';
     }
 
-    public static function adminBlogPreferencesForm($core, $settings)
+    public static function adminBlogPreferencesForm($settings)
     {
         $settings->addNameSpace('extmedia');
         echo
@@ -52,7 +46,7 @@ class externalMediaBehaviors
         $settings->extmedia->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], 'string');
     }
 
-    public static function adminPostEditor($editor = '', $context = '', array $tags = [], $syntax = '')
+    public static function adminPostEditor($editor = '')
     {
         $res = '';
         if ($editor == 'dcLegacyEditor') {
@@ -78,7 +72,7 @@ class externalMediaBehaviors
         return $res;
     }
 
-    public static function ckeditorExtraPlugins(ArrayObject $extraPlugins, $context = '')
+    public static function ckeditorExtraPlugins(ArrayObject $extraPlugins)
     {
         $extraPlugins[] = [
             'name'   => 'externalmedia',
@@ -87,3 +81,9 @@ class externalMediaBehaviors
         ];
     }
 }
+
+dcCore::app()->addBehavior('adminPageHTTPHeaderCSP', [externalMediaBehaviors::class, 'adminPageHTTPHeaderCSP']);
+dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [externalMediaBehaviors::class, 'adminBlogPreferencesForm']);
+dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [externalMediaBehaviors::class, 'adminBeforeBlogSettingsUpdate']);
+dcCore::app()->addBehavior('adminPostEditor', [externalMediaBehaviors::class, 'adminPostEditor']);
+dcCore::app()->addBehavior('ckeditorExtraPlugins', [externalMediaBehaviors::class, 'ckeditorExtraPlugins']);
