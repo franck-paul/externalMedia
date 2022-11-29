@@ -18,7 +18,7 @@ $this->registerModule(
     'External Media',
     'Insert external media from Internet',
     'Olivier Meunier, Franck Paul and contributors',
-    '1.7',
+    '2.0',
     [
         'requires'    => [['core', '2.24']],
         'permissions' => dcCore::app()->auth->makePermissions([
