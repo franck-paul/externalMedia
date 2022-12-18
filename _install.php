@@ -14,19 +14,9 @@ if (!defined('DC_CONTEXT_ADMIN')) {
     return;
 }
 
-$new_version = dcCore::app()->plugins->moduleInfo('externalMedia', 'version');
-$old_version = dcCore::app()->getVersion('externalMedia');
-
-if (version_compare((string) $old_version, $new_version, '>=')) {
+if (!dcCore::app()->newVersion(basename(__DIR__), dcCore::app()->plugins->moduleInfo(basename(__DIR__), 'version'))) {
     return;
 }
 
-try {
-    dcCore::app()->setVersion('externalMedia', $new_version);
-
-    return true;
-} catch (Exception $e) {
-    dcCore::app()->error->add($e->getMessage());
-}
-
-return false;
+// Nothing to do here, but keep this file to overwrite older version
+return;

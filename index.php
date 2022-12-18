@@ -39,7 +39,7 @@ echo '<h2>' . __('External media selector') . '</h2>';
 
 if (!$m_url) {
     echo
-    '<form action="' . $p_url . '&amp;popup=1" method="post">' .
+    '<form action="' . dcCore::app()->admin->getPageURL() . '&amp;popup=1" method="post">' .
     '<h3>' . __('Supported media services') . '</h3>' .
     '<p>' . __('Please enter the URL of the page containing the video you want to include in your post.') . '</p>' .
     '<p><label for="m_url">' . __('Page URL:') . '</label> ' .
