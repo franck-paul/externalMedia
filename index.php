@@ -24,7 +24,6 @@ $m_url    = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
   <script src="<?php echo urldecode(dcPage::getPF('externalMedia/js/popup.js')); ?>"></script>
 <?php
 // Set personal API key
-dcCore::app()->blog->settings->addNamespace('extmedia');
 echo dcPage::jsJson('external_media', ['external_media' => [
     'api_key'       => dcCore::app()->blog->settings->extmedia->api_key,
     'missing_key'   => __('embed.ly API Key missing, see blog settings'),
