@@ -29,7 +29,6 @@ class externalMediaBehaviors
 
     public static function adminBlogPreferencesForm($settings)
     {
-        $settings->addNameSpace('extmedia');
         echo
         '<div class="fieldset"><h4 id="external_media">' . __('External Media') . '</h4>' . "\n" .
         '<p><label>' .
@@ -42,7 +41,6 @@ class externalMediaBehaviors
 
     public static function adminBeforeBlogSettingsUpdate($settings)
     {
-        $settings->addNameSpace('extmedia');
         $settings->extmedia->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], 'string');
     }
 
@@ -53,7 +51,6 @@ class externalMediaBehaviors
             $res = dcPage::jsJson('dc_editor_extmedia', ['title' => __('External media')]) .
             dcPage::jsModuleLoad('externalMedia/js/post.js', dcCore::app()->getVersion('externalMedia'));
         } elseif ($editor == 'dcCKEditor') {
-            dcCore::app()->blog->settings->addNamespace('extmedia');
             $res = dcPage::jsJson('ck_editor_extmedia', [
                 'title'        => __('External media'),
                 'tab_url'      => __('URL'),
@@ -82,8 +79,10 @@ class externalMediaBehaviors
     }
 }
 
-dcCore::app()->addBehavior('adminPageHTTPHeaderCSP', [externalMediaBehaviors::class, 'adminPageHTTPHeaderCSP']);
-dcCore::app()->addBehavior('adminBlogPreferencesFormV2', [externalMediaBehaviors::class, 'adminBlogPreferencesForm']);
-dcCore::app()->addBehavior('adminBeforeBlogSettingsUpdate', [externalMediaBehaviors::class, 'adminBeforeBlogSettingsUpdate']);
-dcCore::app()->addBehavior('adminPostEditor', [externalMediaBehaviors::class, 'adminPostEditor']);
-dcCore::app()->addBehavior('ckeditorExtraPlugins', [externalMediaBehaviors::class, 'ckeditorExtraPlugins']);
+dcCore::app()->addBehaviors([
+    'adminPageHTTPHeaderCSP'        => [externalMediaBehaviors::class, 'adminPageHTTPHeaderCSP'],
+    'adminBlogPreferencesFormV2'    => [externalMediaBehaviors::class, 'adminBlogPreferencesForm'],
+    'adminBeforeBlogSettingsUpdate' => [externalMediaBehaviors::class, 'adminBeforeBlogSettingsUpdate'],
+    'adminPostEditor'               => [externalMediaBehaviors::class, 'adminPostEditor'],
+    'ckeditorExtraPlugins'          => [externalMediaBehaviors::class, 'ckeditorExtraPlugins'],
+]);
