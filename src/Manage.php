@@ -93,6 +93,9 @@ class Manage extends dcNsProcess
                 ->fields([
                     (new Text('h3', __('Supported media services'))),
                     (new Para())->items([
+                        (new Text(null, __('See <a href="https://embed.ly/providers">this site</a> for supported services'))),
+                    ]),
+                    (new Para())->items([
                         (new Text(null, __('Please enter the URL of the page containing the video you want to include in your post.'))),
                     ]),
                     (new Para())->items([
