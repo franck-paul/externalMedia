@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 externalMedia module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-19 14:01+0200\n"
+"POT-Creation-Date: 2023-05-31 10:07+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,70 +16,110 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-plugins/externalMedia//_admin.php:17
-#: ../git-plugins/externalMedia//_admin.php:39
+#: ../git-plugins/externalMedia/src/Backend.php:27
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:44
 msgid "External Media"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:17
+#: ../git-plugins/externalMedia/src/Backend.php:27
 msgid "Insert external media from Internet"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:41
-msgid "embed.ly API Key:"
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:51
+msgid "Label:"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:44
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:54
 msgid "See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order to get your free API Key."
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:64
-#: ../git-plugins/externalMedia//_admin.php:72
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:71
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:75
 msgid "External media"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:74
-#: ../git-plugins/externalMedia//index.php:44
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:76
+msgid "URL"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:77
+#: ../git-plugins/externalMedia/src/Manage.php:102
 msgid "Page URL:"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:75
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:78
 msgid "URL cannot be empty."
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:76
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:79
 msgid "Alignment"
 msgstr ""
 
-#: ../git-plugins/externalMedia//_admin.php:77
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:80
 msgid "Media alignment:"
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:22
-#: ../git-plugins/externalMedia//index.php:37
-msgid "External media selector"
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:81
+#: ../git-plugins/externalMedia/src/Manage.php:113
+msgid "None"
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:29
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:82
+#: ../git-plugins/externalMedia/src/Manage.php:114
+msgid "Left"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:83
+#: ../git-plugins/externalMedia/src/Manage.php:115
+msgid "Right"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/BackendBehaviors.php:84
+#: ../git-plugins/externalMedia/src/Manage.php:116
+msgid "Center"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:72
 msgid "embed.ly API Key missing, see blog settings"
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:30
+#: ../git-plugins/externalMedia/src/Manage.php:73
 msgid "embed.ly API error: "
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:42
+#: ../git-plugins/externalMedia/src/Manage.php:76
+#: ../git-plugins/externalMedia/src/Manage.php:81
+msgid "External media selector"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:94
 msgid "Supported media services"
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:43
+#: ../git-plugins/externalMedia/src/Manage.php:96
 msgid "Please enter the URL of the page containing the video you want to include in your post."
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:62
+#: ../git-plugins/externalMedia/src/Manage.php:106
+msgid "Ok"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:129
 msgid "Media alignment"
 msgstr ""
 
-#: ../git-plugins/externalMedia//index.php:71
+#: ../git-plugins/externalMedia/src/Manage.php:133
 msgid "Media title"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:139
+msgid "Title:"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:145
+msgid "Insert"
+msgstr ""
+
+#: ../git-plugins/externalMedia/src/Manage.php:148
+msgid "Cancel"
 msgstr ""
