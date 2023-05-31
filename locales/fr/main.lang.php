@@ -29,7 +29,7 @@ L10n::$locales['embed.ly API Key missing, see blog settings'] = 'Clé API embed.
 L10n::$locales['embed.ly API error: '] = 'Erreur de l\'API embed.ly : ';
 L10n::$locales['External media selector'] = 'Sélecteur de médias externes';
 L10n::$locales['Supported media services'] = 'Services de média supportés';
-L10n::$locales['See <a href="https://embed.ly/providers">this site</a> for supported services'] = '';
+L10n::$locales['See <a href="https://embed.ly/providers">this site</a> for supported services'] = 'Voir <a href="https://embed.ly/providers">ce site</a> pour les services supportés';
 L10n::$locales['Please enter the URL of the page containing the video you want to include in your post.'] = 'Entrez l\'URL de la page contenant la video que vous voulez intégrer à votre billet.';
 L10n::$locales['Ok'] = 'Ok';
 L10n::$locales['Media alignment'] = 'Alignement du média';
