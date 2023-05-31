@@ -63,15 +63,7 @@ jsToolBar.prototype.elements.extmedia.fn.markdown = function () {
 jsToolBar.prototype.elements.extmedia.fncall.wiki = function () {
   const html = this.elements.extmedia.gethtml();
 
-  this.encloseSelection(
-    '',
-    '',
-    () => `
-  ///html
-  ${html}
-  ///
-  `,
-  );
+  this.encloseSelection('', '', () => `///html\n${html}\n///\n`);
 };
 jsToolBar.prototype.elements.extmedia.fncall.xhtml = function () {
   const html = this.elements.extmedia.gethtml();

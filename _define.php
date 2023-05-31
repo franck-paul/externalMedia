@@ -14,7 +14,7 @@ $this->registerModule(
     'External Media',
     'Insert external media from Internet',
     'Olivier Meunier, Franck Paul and contributors',
-    '2.1',
+    '3.0',
     [
         'requires'    => [['core', '2.26']],
         'permissions' => dcCore::app()->auth->makePermissions([
@@ -22,7 +22,7 @@ $this->registerModule(
             dcAuth::PERMISSION_CONTENT_ADMIN,
         ]),
         'type'     => 'plugin',
-        'priority' => 1001,
+        'priority' => 1001, // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
         'settings' => [
             'self' => false,
             'blog' => '#params.external_media',
