@@ -13,7 +13,7 @@ use Dotclear\Helper\L10n;
 
 L10n::$locales['External Media'] = '';
 L10n::$locales['Insert external media from Internet'] = '';
-L10n::$locales['Label:'] = '';
+L10n::$locales['embed.ly API Key:'] = '';
 L10n::$locales['See <a href="https://app.embed.ly/signup">embed.ly</a> web site in order to get your free API Key.'] = '';
 L10n::$locales['External media'] = '';
 L10n::$locales['URL'] = '';

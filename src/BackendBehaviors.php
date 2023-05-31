@@ -48,7 +48,7 @@ class BackendBehaviors
                     ->size(25)
                     ->maxlength(50)
                     ->value(Html::escapeHTML($settings->api_key))
-                    ->label((new Label(__('Label:'), Label::INSIDE_TEXT_BEFORE))),
+                    ->label((new Label(__('embed.ly API Key:'), Label::INSIDE_TEXT_BEFORE))),
             ]),
             (new Para())->class('form-note')->items([
                 (new Text(null, __('See <a href="https://app.embed.ly/signup">embed.ly</a> web site in order to get your free API Key.'))),
