@@ -29,6 +29,7 @@ L10n::$locales['embed.ly API Key missing, see blog settings'] = '';
 L10n::$locales['embed.ly API error: '] = '';
 L10n::$locales['External media selector'] = '';
 L10n::$locales['Supported media services'] = '';
+L10n::$locales['See <a href="https://embed.ly/providers">this site</a> for supported services'] = '';
 L10n::$locales['Please enter the URL of the page containing the video you want to include in your post.'] = '';
 L10n::$locales['Ok'] = '';
 L10n::$locales['Media alignment'] = '';
