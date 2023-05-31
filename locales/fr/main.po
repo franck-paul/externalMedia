@@ -1,10 +1,10 @@
 # SOME DESCRIPTIVE TITLE.
 # This file is put in the public domain.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Franck Paul <carnet.franck.paul@gmail.com>, 2023
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -14,10 +14,10 @@ msgstr ""
 "PO-Revision-Date: 2023-05-31 08:10+0000\n"
 "Last-Translator: Franck Paul <carnet.franck.paul@gmail.com>, 2023\n"
 "Language-Team: French (https://app.transifex.com/open-time/teams/109573/fr/)\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "External Media"
@@ -26,12 +26,15 @@ msgstr "Média externe"
 msgid "Insert external media from Internet"
 msgstr "Permet l'insertion de média externe depuis Internet"
 
-#, fuzzy
 msgid "embed.ly API Key:"
-msgstr "Erreur de l'API embed.ly : "
+msgstr "Clé API embed.ly :"
 
-msgid "See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order to get your free API Key."
-msgstr "Voir le site <a href=\"https://app.embed.ly/signup\">embed.ly</a> pour obtenir une clé API gratuite."
+msgid ""
+"See <a href=\"https://app.embed.ly/signup\">embed.ly</a> web site in order "
+"to get your free API Key."
+msgstr ""
+"Voir le site <a href=\"https://app.embed.ly/signup\">embed.ly</a> pour "
+"obtenir une clé API gratuite."
 
 msgid "External media"
 msgstr "Sélecteur de médias externes"
@@ -75,11 +78,19 @@ msgstr "Sélecteur de médias externes"
 msgid "Supported media services"
 msgstr "Services de média supportés"
 
-msgid "See <a href=\"https://embed.ly/providers\">this site</a> for supported services"
-msgstr "Voir <a href=\"https://embed.ly/providers\">ce site</a> pour les services supportés"
+msgid ""
+"See <a href=\"https://embed.ly/providers\">this site</a> for supported "
+"services"
+msgstr ""
+"Voir <a href=\"https://embed.ly/providers\">ce site</a> pour les services "
+"supportés"
 
-msgid "Please enter the URL of the page containing the video you want to include in your post."
-msgstr "Entrez l'URL de la page contenant la video que vous voulez intégrer à votre billet."
+msgid ""
+"Please enter the URL of the page containing the video you want to include in"
+" your post."
+msgstr ""
+"Entrez l'URL de la page contenant la video que vous voulez intégrer à votre "
+"billet."
 
 msgid "Ok"
 msgstr "Ok"
@@ -98,6 +109,3 @@ msgstr "Insérer"
 
 msgid "Cancel"
 msgstr "Annuler"
-
-#~ msgid "Label:"
-#~ msgstr "Libellé :"
