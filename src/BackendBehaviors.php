@@ -94,7 +94,7 @@ class BackendBehaviors
         $extraPlugins[] = [
             'name'   => 'externalmedia',
             'button' => 'ExternalMedia',
-            'url'    => dcPage::getPF(My::id() . '/cke-addon/'), // DC_ADMIN_URL . 'index.php?pf=externalMedia/cke-addon/',
+            'url'    => urldecode(DC_ADMIN_URL . dcPage::getPF(My::id() . '/cke-addon/')),
         ];
     }
 }
