@@ -68,7 +68,13 @@ class BackendBehaviors
         $settings = dcCore::app()->blog->settings->get(My::id());
         $res      = '';
         if ($editor == 'dcLegacyEditor') {
-            $res = dcPage::jsJson('dc_editor_extmedia', ['title' => __('External media')]) .
+            $res = dcPage::jsJson('dc_editor_extmedia', [
+                'title'    => __('External media'),
+                'icon'     => urldecode(dcPage::getPF(My::id() . '/icon.svg')),
+                'open_url' => dcCore::app()->adminurl->get('admin.plugin.' . My::id(), [
+                    'popup' => 1,
+                ], '&'),
+            ]) .
             dcPage::jsModuleLoad('externalMedia/js/post.js', dcCore::app()->getVersion('externalMedia'));
         } elseif ($editor == 'dcCKEditor') {
             $res = dcPage::jsJson('ck_editor_extmedia', [
