@@ -7,7 +7,7 @@ $(() => {
   jsToolBar.prototype.elements.extmedia = {
     type: 'button',
     title: data.title || 'External Media',
-    icon: 'index.php?pf=externalMedia/icon.svg',
+    icon: data.icon,
     fn: {},
     fncall: {},
     open_url: data.open_url,
