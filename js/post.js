@@ -32,11 +32,11 @@ $(() => {
       let res = '<div class="external-media"';
 
       if (d.alignment == 'left') {
-        res += ' style="float: left; margin: 0 1em 1em 0;"';
+        res += ' ' + (data.style.class ? 'class' : 'style') + '="' + data.style.left + '"';
       } else if (d.alignment == 'right') {
-        res += ' style="float: right; margin: 0 0 1em 1em;"';
+        res += ' ' + (data.style.class ? 'class' : 'style') + '="' + data.style.right + '"';
       } else if (d.alignment == 'center') {
-        res += ' style="margin: 1em auto; text-align: center;"';
+        res += ' ' + (data.style.class ? 'class' : 'style') + '="' + data.style.center + '"';
       }
 
       res += `>\n${d.m_object}`;

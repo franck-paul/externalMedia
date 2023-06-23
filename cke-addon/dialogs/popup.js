@@ -41,12 +41,19 @@ CKEDITOR.dialog.add('externalMediaDialog', (editor) => ({
     const url = this.getValueOf('tab-url', 'url');
     const alignment = this.getValueOf('tab-alignment', 'alignment');
 
-    $.getJSON(
-      `https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.ck_extmedia.api_key}&callback=?`,
-      (data) => {
-        const div = editor.document.createElement('div');
-        let style = '';
-        div.setAttribute('class', 'external-media');
+    $.getJSON(`https://api.embed.ly/1/oembed?url=${url}&key=${dotclear.ck_extmedia.api_key}&callback=?`, (data) => {
+      const div = editor.document.createElement('div');
+      let style = '';
+      let classes = 'external_media';
+      if (dotclear.ck_extmedia.style.class) {
+        if (alignment == 'left') {
+          classes += ' ' + dotclear.ck_extmedia.style.left;
+        } else if (alignment == 'right') {
+          classes += ' ' + dotclear.ck_extmedia.style.right;
+        } else if (alignment == 'center') {
+          classes += ' ' + dotclear.ck_extmedia.style.center;
+        }
+      } else {
         if (alignment == 'left') {
           style = 'float: left; margin: 0 1em 1em 0;';
         } else if (alignment == 'right') {
@@ -54,13 +61,14 @@ CKEDITOR.dialog.add('externalMediaDialog', (editor) => ({
         } else if (alignment == 'center') {
           style = 'margin: 1em auto; text-align: center;';
         }
-        if (style != '') {
-          div.setAttribute('style', style);
-        }
-
-        div.appendHtml(data.html);
-        editor.insertElement(div);
       }
-    );
+      div.setAttribute('class', classes);
+      if (style != '') {
+        div.setAttribute('style', style);
+      }
+
+      div.appendHtml(data.html);
+      editor.insertElement(div);
+    });
   },
 }));
