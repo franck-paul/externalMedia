@@ -15,8 +15,9 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\externalMedia;
 
 use dcCore;
-use dcNsProcess;
-use dcPage;
+use Dotclear\Core\Backend\Notices;
+use Dotclear\Core\Backend\Page;
+use Dotclear\Core\Process;
 use Dotclear\Helper\Html\Form\Button;
 use Dotclear\Helper\Html\Form\Form;
 use Dotclear\Helper\Html\Form\Hidden;
@@ -29,19 +30,15 @@ use Dotclear\Helper\Html\Form\Text;
 use Dotclear\Helper\Html\Form\Url;
 use Dotclear\Helper\Html\Html;
 
-class Manage extends dcNsProcess
+class Manage extends Process
 {
-    protected static $init = false; /** @deprecated since 2.27 */
     /**
      * Initializes the page.
      */
     public static function init(): bool
     {
-        static::$init = My::checkContext(My::MANAGE)
-            // Only in popup mode
-            && !empty($_REQUEST['popup']);
-
-        return static::$init;
+        // Only in popup mode
+        return self::status(My::checkContext(My::MANAGE) && !empty($_REQUEST['popup']));
     }
 
     /**
@@ -49,7 +46,7 @@ class Manage extends dcNsProcess
      */
     public static function process(): bool
     {
-        if (!static::$init) {
+        if (!self::status()) {
             return false;
         }
 
@@ -61,28 +58,28 @@ class Manage extends dcNsProcess
      */
     public static function render(): void
     {
-        if (!static::$init) {
+        if (!self::status()) {
             return;
         }
 
         $settings = dcCore::app()->blog->settings->get(My::id());
 
-        $head = dcPage::jsModuleLoad(My::id() . '/js/popup.js') .
-            dcPage::jsJson('external_media', ['external_media' => [
+        $head = My::jsLoad('popup.js') .
+            Page::jsJson('external_media', ['external_media' => [
                 'api_key'       => $settings->api_key,
                 'missing_key'   => __('embed.ly API Key missing, see blog settings'),
                 'request_error' => __('embed.ly API error: '),
             ]]);
 
-        dcPage::openModule(__('External media selector'), $head);
+        Page::openModule(__('External media selector'), $head);
 
-        echo dcPage::breadcrumb(
+        echo Page::breadcrumb(
             [
                 Html::escapeHTML(dcCore::app()->blog->name) => '',
                 __('External media selector')               => '',
             ]
         );
-        echo dcPage::notices();
+        echo Notices::getNotices();
 
         // Form
         $m_url = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
@@ -155,6 +152,6 @@ class Manage extends dcNsProcess
             ->render();
         }
 
-        dcPage::closeModule();
+        Page::closeModule();
     }
 }

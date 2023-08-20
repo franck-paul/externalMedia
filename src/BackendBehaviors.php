@@ -17,7 +17,7 @@ namespace Dotclear\Plugin\externalMedia;
 use ArrayObject;
 use dcCore;
 use dcNamespace;
-use dcPage;
+use Dotclear\Core\Backend\Page;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Input;
 use Dotclear\Helper\Html\Form\Label;
@@ -70,8 +70,8 @@ class BackendBehaviors
         if ($editor == 'dcLegacyEditor') {
             $data = [
                 'title'    => __('External media'),
-                'icon'     => urldecode(dcPage::getPF(My::id() . '/icon.svg')),
-                'open_url' => dcCore::app()->adminurl->get('admin.plugin.' . My::id(), [
+                'icon'     => urldecode(Page::getPF(My::id() . '/icon.svg')),
+                'open_url' => dcCore::app()->admin->url->get('admin.plugin.' . My::id(), [
                     'popup' => 1,
                 ], '&'),
             ];
@@ -90,8 +90,8 @@ class BackendBehaviors
                     'right'  => 'media-right',
                 ];
             }
-            $res = dcPage::jsJson('dc_editor_extmedia', $data) .
-            dcPage::jsModuleLoad('externalMedia/js/post.js', dcCore::app()->getVersion('externalMedia'));
+            $res = Page::jsJson('dc_editor_extmedia', $data) .
+            My::jsLoad('post.js');
         } elseif ($editor == 'dcCKEditor') {
             $data = [
                 'title'        => __('External media'),
@@ -121,7 +121,7 @@ class BackendBehaviors
                     'right'  => 'media-right',
                 ];
             }
-            $res = dcPage::jsJson('ck_editor_extmedia', $data);
+            $res = Page::jsJson('ck_editor_extmedia', $data);
         }
 
         return $res;
@@ -132,7 +132,7 @@ class BackendBehaviors
         $extraPlugins[] = [
             'name'   => 'externalmedia',
             'button' => 'ExternalMedia',
-            'url'    => urldecode(DC_ADMIN_URL . dcPage::getPF(My::id() . '/cke-addon/')),
+            'url'    => urldecode(DC_ADMIN_URL . Page::getPF(My::id() . '/cke-addon/')),
         ];
     }
 }
