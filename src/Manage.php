@@ -62,7 +62,7 @@ class Manage extends Process
             return;
         }
 
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
 
         $head = My::jsLoad('popup.js') .
             Page::jsJson('external_media', ['external_media' => [
@@ -71,7 +71,7 @@ class Manage extends Process
                 'request_error' => __('embed.ly API error: '),
             ]]);
 
-        Page::openModule(__('External media selector'), $head);
+        Page::openModule(My::name(), $head);
 
         echo Page::breadcrumb(
             [
@@ -105,7 +105,7 @@ class Manage extends Process
                     (new Para())->items([
                         (new Submit(['frmsubmit']))
                             ->value(__('Ok')),
-                        dcCore::app()->formNonce(false),
+                        ... My::hiddenFields(),
                     ]),
                 ])
             ->render();

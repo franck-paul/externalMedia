@@ -38,7 +38,7 @@ class BackendBehaviors
 
     public static function adminBlogPreferencesForm()
     {
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
         echo
         (new Fieldset('external_media'))
         ->legend((new Legend(__('External Media'))))
@@ -59,13 +59,13 @@ class BackendBehaviors
 
     public static function adminBeforeBlogSettingsUpdate()
     {
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
         $settings->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], dcNamespace::NS_STRING);
     }
 
     public static function adminPostEditor($editor = '')
     {
-        $settings = dcCore::app()->blog->settings->get(My::id());
+        $settings = My::settings();
         $res      = '';
         if ($editor == 'dcLegacyEditor') {
             $data = [

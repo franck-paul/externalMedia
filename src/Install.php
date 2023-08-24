@@ -44,7 +44,7 @@ class Install extends Process
             }
 
             // Init
-            $settings = dcCore::app()->blog->settings->get(My::id());
+            $settings = My::settings();
             $settings->put('api_key', '', dcNamespace::NS_STRING, '', false, true);
         } catch (Exception $e) {
             dcCore::app()->error->add($e->getMessage());
