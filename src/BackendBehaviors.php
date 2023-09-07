@@ -74,22 +74,13 @@ class BackendBehaviors
                 'open_url' => dcCore::app()->admin->url->get('admin.plugin.' . My::id(), [
                     'popup' => 1,
                 ], '&'),
-            ];
-            if (version_compare(preg_replace('/\-dev.*$/', '', DC_VERSION), '2.27', '<')) {
-                $data['style'] = [  // List of styles used
-                    'class'  => false,
-                    'left'   => 'float: left; margin: 0 1em 1em 0;',
-                    'center' => 'margin: 0 auto; display: table;',
-                    'right'  => 'float: right; margin: 0 0 1em 1em;',
-                ];
-            } else {
-                $data['style'] = [  // List of classes used
+                'style' => [
                     'class'  => true,
                     'left'   => 'media-left',
                     'center' => 'media-center',
                     'right'  => 'media-right',
-                ];
-            }
+                ],
+            ];
             $res = Page::jsJson('dc_editor_extmedia', $data) .
             My::jsLoad('post.js');
         } elseif ($editor == 'dcCKEditor') {
@@ -105,22 +96,13 @@ class BackendBehaviors
                 'align_right'  => __('Right'),
                 'align_center' => __('Center'),
                 'api_key'      => $settings->api_key,
-            ];
-            if (version_compare(preg_replace('/\-dev.*$/', '', DC_VERSION), '2.27', '<')) {
-                $data['style'] = [  // List of styles used
-                    'class'  => false,
-                    'left'   => 'float: left; margin: 0 1em 1em 0;',
-                    'center' => 'margin: 0 auto; display: table;',
-                    'right'  => 'float: right; margin: 0 0 1em 1em;',
-                ];
-            } else {
-                $data['style'] = [  // List of classes used
+                'style'        => [
                     'class'  => true,
                     'left'   => 'media-left',
                     'center' => 'media-center',
                     'right'  => 'media-right',
-                ];
-            }
+                ],
+            ];
             $res = Page::jsJson('ck_editor_extmedia', $data);
         }
 
