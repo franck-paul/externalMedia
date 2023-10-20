@@ -14,7 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\externalMedia;
 
-use dcCore;
 use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Backend\Page;
@@ -87,7 +86,7 @@ class Manage extends Process
 
         if (!$m_url) {
             echo (new Form('media-external-form'))
-                ->action(dcCore::app()->admin->getPageURL() . '&popup=1')
+                ->action(App::backend()->getPageURL() . '&popup=1')
                 ->method('post')
                 ->fields([
                     (new Text('h3', __('Supported media services'))),

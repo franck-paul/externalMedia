@@ -15,8 +15,7 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\externalMedia;
 
 use ArrayObject;
-use dcCore;
-use dcNamespace;
+use Dotclear\App;
 use Dotclear\Core\Backend\Page;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Input;
@@ -66,7 +65,7 @@ class BackendBehaviors
 
     public static function adminBeforeBlogSettingsUpdate(): string
     {
-        My::settings()->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], dcNamespace::NS_STRING);
+        My::settings()->put('api_key', empty($_POST['extmedia_api_key']) ? '' : $_POST['extmedia_api_key'], App::blogWorkspace()::NS_STRING);
 
         return '';
     }
@@ -78,7 +77,7 @@ class BackendBehaviors
             $data = [
                 'title'    => __('External media'),
                 'icon'     => urldecode(Page::getPF(My::id() . '/icon.svg')),
-                'open_url' => dcCore::app()->adminurl->get('admin.plugin.' . My::id(), [
+                'open_url' => App::backend()->url()->get('admin.plugin.' . My::id(), [
                     'popup' => 1,
                 ], '&'),
                 'style' => [
