@@ -35,7 +35,8 @@ class BackendBehaviors
         if (!isset($csp['script-src'])) {
             $csp['script-src'] = '';
         }
-        $csp['script-src'] .= ' ' . 'https://api.embed.ly';
+
+        $csp['script-src'] .= ' https://api.embed.ly';
 
         return '';
     }

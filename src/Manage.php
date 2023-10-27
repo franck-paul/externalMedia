@@ -46,11 +46,7 @@ class Manage extends Process
      */
     public static function process(): bool
     {
-        if (!self::status()) {
-            return false;
-        }
-
-        return true;
+        return (bool) self::status();
     }
 
     /**
@@ -82,7 +78,7 @@ class Manage extends Process
         echo Notices::getNotices();
 
         // Form
-        $m_url = !empty($_POST['m_url']) ? $_POST['m_url'] : null;
+        $m_url = empty($_POST['m_url']) ? null : $_POST['m_url'];
 
         if (!$m_url) {
             echo (new Form('media-external-form'))
