@@ -14,7 +14,7 @@ $this->registerModule(
     'External Media',
     'Insert external media from Internet',
     'Olivier Meunier, Franck Paul and contributors',
-    '5.1',
+    '5.2',
     [
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
