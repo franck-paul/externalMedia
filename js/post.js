@@ -45,7 +45,7 @@ $(() => {
         if (d.url) {
           d.title = `<a href="${d.url}">${d.title}</a>`;
         }
-        res += `\n<br />${d.title}`;
+        res += `\n<br>${d.title}`;
       }
 
       res += '\n</div>';

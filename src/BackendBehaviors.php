@@ -50,7 +50,7 @@ class BackendBehaviors
         ->fields([
             (new Para())->items([
                 (new Input('extmedia_api_key'))
-                    ->size(25)
+                    ->size(40)
                     ->maxlength(50)
                     ->value(Html::escapeHTML($settings->api_key))
                     ->label((new Label(__('embed.ly API Key:'), Label::INSIDE_TEXT_BEFORE))),
