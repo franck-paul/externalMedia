@@ -47,20 +47,18 @@ CKEDITOR.dialog.add('externalMediaDialog', (editor) => ({
       let classes = 'external_media';
       if (dotclear.ck_extmedia.style.class) {
         if (alignment == 'left') {
-          classes += ' ' + dotclear.ck_extmedia.style.left;
+          classes += ` ${dotclear.ck_extmedia.style.left}`;
         } else if (alignment == 'right') {
-          classes += ' ' + dotclear.ck_extmedia.style.right;
+          classes += ` ${dotclear.ck_extmedia.style.right}`;
         } else if (alignment == 'center') {
-          classes += ' ' + dotclear.ck_extmedia.style.center;
+          classes += ` ${dotclear.ck_extmedia.style.center}`;
         }
-      } else {
-        if (alignment == 'left') {
-          style = 'float: left; margin: 0 1em 1em 0;';
-        } else if (alignment == 'right') {
-          style = 'float: right; margin: 0 0 1em 1em;';
-        } else if (alignment == 'center') {
-          style = 'margin: 1em auto; text-align: center;';
-        }
+      } else if (alignment == 'left') {
+        style = 'float: left; margin: 0 1em 1em 0;';
+      } else if (alignment == 'right') {
+        style = 'float: right; margin: 0 0 1em 1em;';
+      } else if (alignment == 'center') {
+        style = 'margin: 1em auto; text-align: center;';
       }
       div.setAttribute('class', classes);
       if (style != '') {

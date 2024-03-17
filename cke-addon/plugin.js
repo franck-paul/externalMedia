@@ -15,7 +15,7 @@ dotclear.ck_extmedia = dotclear.getData('ck_editor_extmedia');
       editor.ui.addButton('ExternalMedia', {
         label: dotclear.ck_extmedia.title,
         command: 'externalMediaCommand',
-        icon: `${this.path}icons/icon.png`,
+        icon: `${this.path}icons/icon.svg`,
       });
     },
   });
