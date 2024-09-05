@@ -27,6 +27,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=externalMedia',
         'support'    => 'https://github.com/franck-paul/externalMedia',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/main/dcstore.xml',
     ]
 );
