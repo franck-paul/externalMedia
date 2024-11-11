@@ -1,7 +1,7 @@
 /*global jsToolBar, dotclear */
 'use strict';
 
-$(() => {
+dotclear.ready(() => {
   const data = dotclear.getData('dc_editor_extmedia');
 
   jsToolBar.prototype.elements.extmedia = {
