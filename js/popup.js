@@ -1,7 +1,7 @@
 /*global $, dotclear */
 'use strict';
 
-$(() => {
+dotclear.ready(() => {
   Object.assign(dotclear, dotclear.getData('external_media'));
 
   $('#media-insert-cancel').on('click', () => {
