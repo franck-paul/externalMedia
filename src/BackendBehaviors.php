@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief externalMedia, a plugin for Dotclear 2
  *
@@ -73,9 +74,8 @@ class BackendBehaviors
 
     public static function adminPostEditor(string $editor = ''): string
     {
-        $res = '';
-        if ($editor == 'dcLegacyEditor') {
-            $data = [
+        return match ($editor) {
+            'dcLegacyEditor' => Page::jsJson('dc_editor_extmedia', [
                 'title'    => __('External media'),
                 'icon'     => urldecode(Page::getPF(My::id() . '/icon.svg')),
                 'open_url' => App::backend()->url()->get('admin.plugin.' . My::id(), [
@@ -87,11 +87,10 @@ class BackendBehaviors
                     'center' => 'media-center',
                     'right'  => 'media-right',
                 ],
-            ];
-            $res = Page::jsJson('dc_editor_extmedia', $data) .
-            My::jsLoad('post.js');
-        } elseif ($editor == 'dcCKEditor') {
-            $data = [
+            ]) .
+            My::jsLoad('post.js'),
+
+            'dcCKEditor' => Page::jsJson('ck_editor_extmedia', [
                 'title'        => __('External media'),
                 'tab_url'      => __('URL'),
                 'url'          => __('Page URL:'),
@@ -109,17 +108,14 @@ class BackendBehaviors
                     'center' => 'media-center',
                     'right'  => 'media-right',
                 ],
-            ];
-            $res = Page::jsJson('ck_editor_extmedia', $data);
-        }
+            ]),
 
-        return $res;
+            default => '',
+        };
     }
 
     /**
      * @param      ArrayObject<int, mixed>  $extraPlugins  The extra plugins
-     *
-     * @return     string
      */
     public static function ckeditorExtraPlugins(ArrayObject $extraPlugins): string
     {
