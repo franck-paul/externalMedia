@@ -21,7 +21,7 @@ $this->registerModule(
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
         'type'        => 'plugin',
-        'priority'    => 1001, // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
+        'priority'    => 1010,  // Must be higher than dcLegacyEditor/dcCKEditor priority (ie 1000)
         'settings'    => [
             'self' => false,
             'blog' => '#params.external_media',
@@ -30,5 +30,6 @@ $this->registerModule(
         'details'    => 'https://open-time.net/?q=externalMedia',
         'support'    => 'https://github.com/franck-paul/externalMedia',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/externalMedia/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );
