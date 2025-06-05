@@ -8,6 +8,7 @@ dotclear.ready(() => {
     type: 'button',
     title: data.title || 'External Media',
     icon: data.icon,
+    icon_dark: data.icon_dark,
     fn: {},
     fncall: {},
     open_url: data.open_url,
