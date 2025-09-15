@@ -4,6 +4,15 @@
 dotclear.ready(() => {
   const data = dotclear.getData('dc_editor_extmedia');
 
+  jsToolBar.prototype.elements.extmediaSpaceBefore = {
+    type: 'space',
+    format: {
+      wysiwyg: true,
+      wiki: true,
+      xhtml: true,
+      markdown: true,
+    },
+  };
   jsToolBar.prototype.elements.extmedia = {
     type: 'button',
     title: data.title || 'External Media',
@@ -51,6 +60,15 @@ dotclear.ready(() => {
 
       res += '\n</div>';
       return res;
+    },
+  };
+  jsToolBar.prototype.elements.extmediaSpaceAfter = {
+    type: 'space',
+    format: {
+      wysiwyg: true,
+      wiki: true,
+      xhtml: true,
+      markdown: true,
     },
   };
 
