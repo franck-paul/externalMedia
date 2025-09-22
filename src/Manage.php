@@ -16,8 +16,6 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\externalMedia;
 
 use Dotclear\App;
-use Dotclear\Core\Backend\Notices;
-use Dotclear\Core\Backend\Page;
 use Dotclear\Helper\Html\Form\Button;
 use Dotclear\Helper\Html\Form\Form;
 use Dotclear\Helper\Html\Form\Hidden;
@@ -65,21 +63,21 @@ class Manage
         $settings = My::settings();
 
         $head = My::jsLoad('popup.js') .
-            Page::jsJson('external_media', ['external_media' => [
+            App::backend()->page()->jsJson('external_media', ['external_media' => [
                 'api_key'       => $settings->api_key,
                 'missing_key'   => __('embed.ly API Key missing, see blog settings'),
                 'request_error' => __('embed.ly API error: '),
             ]]);
 
-        Page::openModule(My::name(), $head);
+        App::backend()->page()->openModule(My::name(), $head);
 
-        echo Page::breadcrumb(
+        echo App::backend()->page()->breadcrumb(
             [
                 Html::escapeHTML(App::blog()->name()) => '',
                 __('External media selector')         => '',
             ]
         );
-        echo Notices::getNotices();
+        echo App::backend()->notices()->getNotices();
 
         // Form
         $m_url = empty($_POST['m_url']) ? null : $_POST['m_url'];
@@ -152,6 +150,6 @@ class Manage
             ->render();
         }
 
-        Page::closeModule();
+        App::backend()->page()->closeModule();
     }
 }

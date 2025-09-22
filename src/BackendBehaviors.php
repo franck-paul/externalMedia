@@ -17,7 +17,6 @@ namespace Dotclear\Plugin\externalMedia;
 
 use ArrayObject;
 use Dotclear\App;
-use Dotclear\Core\Backend\Page;
 use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Input;
 use Dotclear\Helper\Html\Form\Label;
@@ -75,10 +74,10 @@ class BackendBehaviors
     public static function adminPostEditor(string $editor = ''): string
     {
         return match ($editor) {
-            'dcLegacyEditor' => Page::jsJson('dc_editor_extmedia', [
+            'dcLegacyEditor' => App::backend()->page()->jsJson('dc_editor_extmedia', [
                 'title'     => __('External media'),
-                'icon'      => urldecode(Page::getPF(My::id() . '/icon.svg')),
-                'icon_dark' => urldecode(Page::getPF(My::id() . '/icon-dark.svg')),
+                'icon'      => urldecode((string) App::backend()->page()->getPF(My::id() . '/icon.svg')),
+                'icon_dark' => urldecode((string) App::backend()->page()->getPF(My::id() . '/icon-dark.svg')),
                 'open_url'  => App::backend()->url()->get('admin.plugin.' . My::id(), [
                     'popup' => 1,
                 ], '&'),
@@ -91,7 +90,7 @@ class BackendBehaviors
             ]) .
             My::jsLoad('post.js'),
 
-            'dcCKEditor' => Page::jsJson('ck_editor_extmedia', [
+            'dcCKEditor' => App::backend()->page()->jsJson('ck_editor_extmedia', [
                 'title'        => __('External media'),
                 'tab_url'      => __('URL'),
                 'url'          => __('Page URL:'),
@@ -123,7 +122,7 @@ class BackendBehaviors
         $extraPlugins[] = [
             'name'   => 'externalmedia',
             'button' => 'ExternalMedia',
-            'url'    => urldecode(App::config()->adminUrl() . Page::getPF(My::id() . '/cke-addon/')),
+            'url'    => urldecode(App::config()->adminUrl() . App::backend()->page()->getPF(My::id() . '/cke-addon/')),
         ];
 
         return '';
