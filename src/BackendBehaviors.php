@@ -44,6 +44,9 @@ class BackendBehaviors
     public static function adminBlogPreferencesForm(): string
     {
         $settings = My::settings();
+
+        $api_key = is_string($api_key = $settings->api_key) ? $api_key : '';
+
         echo
         (new Fieldset('external_media'))
         ->legend((new Legend(__('External Media'))))
@@ -52,7 +55,7 @@ class BackendBehaviors
                 (new Input('extmedia_api_key'))
                     ->size(40)
                     ->maxlength(50)
-                    ->value(Html::escapeHTML($settings->api_key))
+                    ->value(Html::escapeHTML($api_key))
                     ->label((new Label(__('embed.ly API Key:'), Label::INSIDE_TEXT_BEFORE))),
             ]),
             (new Para())->class('form-note')->items([

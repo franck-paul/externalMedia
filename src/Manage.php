@@ -80,9 +80,9 @@ class Manage
         echo App::backend()->notices()->getNotices();
 
         // Form
-        $m_url = empty($_POST['m_url']) ? null : $_POST['m_url'];
+        $m_url = isset($_POST['m_url']) && is_string($m_url = $_POST['m_url']) ? $m_url : '';
 
-        if (!$m_url) {
+        if ($m_url === '') {
             echo (new Form('media-external-form'))
                 ->action(App::backend()->getPageURL() . '&popup=1')
                 ->method('post')
