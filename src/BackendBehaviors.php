@@ -45,7 +45,7 @@ class BackendBehaviors
     {
         $settings = My::settings();
 
-        $api_key = is_string($api_key = $settings->api_key) ? $api_key : '';
+        $api_key = $settings->getStr('api_key', false);
 
         echo
         (new Fieldset('external_media'))
@@ -104,7 +104,7 @@ class BackendBehaviors
                 'align_left'   => __('Left'),
                 'align_right'  => __('Right'),
                 'align_center' => __('Center'),
-                'api_key'      => My::settings()->api_key,
+                'api_key'      => My::settings()->getStr('api_key'),
                 'style'        => [
                     'class'  => true,
                     'left'   => 'media-left',

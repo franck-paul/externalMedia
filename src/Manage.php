@@ -64,7 +64,7 @@ class Manage
 
         $head = My::jsLoad('popup.js') .
             App::backend()->page()->jsJson('external_media', ['external_media' => [
-                'api_key'       => $settings->api_key,
+                'api_key'       => $settings->getStr('api_key'),
                 'missing_key'   => __('embed.ly API Key missing, see blog settings'),
                 'request_error' => __('embed.ly API error: '),
             ]]);
