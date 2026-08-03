@@ -15,9 +15,9 @@ $this->registerModule(
     'External Media',
     'Insert external media from Internet',
     'Olivier Meunier, Franck Paul and contributors',
-    '6.4',
+    '7.0',
     [
-        'date'        => '2026-04-08T19:58:44+0200',
+        'date'        => '2026-08-03T09:55:24+0200',
         'requires'    => [['core', '2.39']],
         'permissions' => 'My',
         'type'        => 'plugin',
