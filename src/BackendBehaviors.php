@@ -28,12 +28,12 @@ use Dotclear\Helper\Html\Html;
 class BackendBehaviors
 {
     /**
-     * @param   ArrayObject<string, string>     $csp    The csp
+     * @param   ArrayObject<string, string>     $arrayObject    The csp
      */
-    public static function adminPageHTTPHeaderCSP(ArrayObject $csp): string
+    public static function adminPageHTTPHeaderCSP(ArrayObject $arrayObject): string
     {
-        $csp['script-src'] ??= '';
-        $csp['script-src'] .= ' https://api.embed.ly';
+        $arrayObject['script-src'] ??= '';
+        $arrayObject['script-src'] .= ' https://api.embed.ly';
 
         return '';
     }
@@ -115,11 +115,11 @@ class BackendBehaviors
     }
 
     /**
-     * @param      ArrayObject<int, array{name:string, url:string, button:string}>  $extraPlugins  The extra plugins
+     * @param      ArrayObject<int, array{name:string, url:string, button:string}>  $arrayObject  The extra plugins
      */
-    public static function ckeditorExtraPlugins(ArrayObject $extraPlugins): string
+    public static function ckeditorExtraPlugins(ArrayObject $arrayObject): string
     {
-        $extraPlugins[] = [
+        $arrayObject[] = [
             'name'   => 'externalmedia',
             'button' => 'ExternalMedia',
             'url'    => urldecode(App::config()->adminUrl() . App::backend()->page()->getPF(My::id() . '/cke-addon/')),
