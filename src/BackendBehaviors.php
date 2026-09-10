@@ -21,8 +21,8 @@ use Dotclear\Helper\Html\Form\Fieldset;
 use Dotclear\Helper\Html\Form\Input;
 use Dotclear\Helper\Html\Form\Label;
 use Dotclear\Helper\Html\Form\Legend;
+use Dotclear\Helper\Html\Form\Note;
 use Dotclear\Helper\Html\Form\Para;
-use Dotclear\Helper\Html\Form\Text;
 use Dotclear\Helper\Html\Html;
 
 class BackendBehaviors
@@ -48,16 +48,17 @@ class BackendBehaviors
         (new Fieldset('external_media'))
         ->legend((new Legend(__('External Media'))))
         ->fields([
-            (new Para())->items([
-                (new Input('extmedia_api_key'))
-                    ->size(40)
-                    ->maxlength(50)
-                    ->value(Html::escapeHTML($api_key))
-                    ->label((new Label(__('embed.ly API Key:'), Label::INSIDE_TEXT_BEFORE))),
-            ]),
-            (new Para())->class('form-note')->items([
-                (new Text(null, __('See <a href="https://app.embed.ly/signup">embed.ly</a> web site in order to get your free API Key.'))),
-            ]),
+            (new Para())
+                ->items([
+                    (new Input('extmedia_api_key'))
+                        ->size(40)
+                        ->maxlength(50)
+                        ->value(Html::escapeHTML($api_key))
+                        ->label((new Label(__('embed.ly API Key:'), Label::INSIDE_TEXT_BEFORE))),
+                ]),
+            (new Note())
+               ->class('form-note')
+               ->text(__('See <a href="https://app.embed.ly/signup">embed.ly</a> web site in order to get your free API Key.')),
         ])
         ->render();
 
