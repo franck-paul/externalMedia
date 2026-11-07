@@ -18,9 +18,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'External Media',
         'Insert external media from Internet',
         'Olivier Meunier, Franck Paul and contributors',
-        '7.0',
+        '7.1',
         [
-            'date'        => '2026-08-03T09:55:24+0200',
+            'date'        => '2026-11-07T16:49:14+0100',
             'requires'    => [['core', '2.39']],
             'permissions' => 'My',
             'type'        => 'plugin',
